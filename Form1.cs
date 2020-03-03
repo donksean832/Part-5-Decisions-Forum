@@ -39,16 +39,16 @@ namespace Part_5_Decisions_Forum
                                 }
 
                                 else
-                                    LblAnswer.Text = "Toddler";
+                                    LblAnswer.Text = "You are a Toddler";
                             }
                             else
-                                LblAnswer.Text = "Child";
+                                LblAnswer.Text = "You are a Child";
                         }
                         else
-                            LblAnswer.Text = "Preteen";
+                            LblAnswer.Text = "You are a Preteen";
                     }
                     else
-                        LblAnswer.Text = "Teen";
+                        LblAnswer.Text = "You are a Teen";
                 }
             }
             else
@@ -75,17 +75,33 @@ namespace Part_5_Decisions_Forum
 
         private void BtnHurricane_Click(object sender, EventArgs e)
         {
-            int windspeed;
-            if (Int32.TryParse(TxtHurricane.Text, out windspeed))
+            int Catagory;
+            if (Int32.TryParse(TxtHurricane.Text, out Catagory))
             {
-                switch (windspeed)
+                if (1 <= Catagory && Catagory <= 5)
                 {
-                    case 1:
-                        LblHurricaneAnswer.Text = ($"Hello");
-                        break;
-                    case 
-                }
+                    switch (Catagory)
+                    {
+                        case 1:
+                            LblHurricaneAnswer.Text = "74-95 mph or 64-82 kt or 119-153 kph";
+                            break;
+                        case 2:
+                            LblHurricaneAnswer.Text = "96-110 mph or 83-95 kt or 154-177 kph";
+                            break;
+                        case 3:
+                            LblHurricaneAnswer.Text = "111-130 mph or 96-113 kt or 178-209 kph";
+                            break;
+                        case 4:
+                            LblHurricaneAnswer.Text = "131-155 mph or 114-135 kt or 210-249 kph";
+                            break;
+                        case 5:
+                            LblHurricaneAnswer.Text = "Greater than 155 mph or 135 kt or 249 kph";
+                            break;
+                    }
 
+                }
+                else
+                    LblHurricaneAnswer.Text = "Enter an Integer between 1 and 5";
             }
             else
                 LblHurricaneAnswer.Text = "Error: Enter Integer";
