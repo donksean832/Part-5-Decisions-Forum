@@ -10,9 +10,14 @@ using System.Windows.Forms;
 
 namespace Part_5_Decisions_Forum
 {
-    public partial class Form1 : Form
+    public partial class Part_5 : Form
     {
-        public Form1()
+        int age;
+        int minimum;
+        int maximum;
+        int answer;
+        int divider;
+        public Part_5()
         {
             InitializeComponent();
         }
@@ -20,7 +25,7 @@ namespace Part_5_Decisions_Forum
         private void BtnAnswer_Click(object sender, EventArgs e)
         {
             int age;
-
+            
             if (Int32.TryParse(TxtAge.Text, out age))
             {
                 if (age > 18)
@@ -53,25 +58,7 @@ namespace Part_5_Decisions_Forum
             }
             else
                 LblAnswer.Text = "Error: Enter an integer";
-
-
-
-            //Color c = (Color)(new Random()).Next(0, 3);
-            //switch (c)
-            //{
-            //    case Color.Red:
-            //        Console.WriteLine("The color is red");
-            //        break;
-            //    case Color.Green:
-            //        Console.WriteLine("The color is green");
-            //        break;
-            //    case Color.Blue:
-            //        Console.WriteLine("The color is blue");
-            //        break;
-            //    default:
-            //        Console.WriteLine("The color is unknown.");
-            //        break;
-            }
+        }
 
         private void BtnHurricane_Click(object sender, EventArgs e)
         {
@@ -105,7 +92,73 @@ namespace Part_5_Decisions_Forum
             }
             else
                 LblHurricaneAnswer.Text = "Error: Enter Integer";
-                
+
+
+            //Random rand1 = new Random();
+            //if (Int32.TryParse(TxtMinimum.Text, out minimum))
+            //{
+            //    if (Int32.TryParse(TxtMaximum.Text, out maximum))
+            //    {
+            //        answer = rand1.Next(minimum, maximum);
+            //        LblAnswerRandom.Text = ($"Random Integer: {answer}");
+            //    }
+            //    else
+            //        LblAnswerRandom.Text = "Error: Enter Correct Data Type";
+            //}
+            //else
+            //    LblAnswerRandom.Text = "Error: Enter Correct Data Type";
+
+
+
+            //if (Int32.TryParse(TxtDivider.Text ,out divider))
+            //{
+            //    if (answer % divider == 0)
+            //        LblAnswerDivider.Text = "Your random number is divisble by your divisor";
+            //    else
+            //        LblAnswerDivider.Text = "Your random number is Not divisble by your divisor";
+            //}
+            //else
+            //    LblAnswer.Text = "Error: Enter Correct Data Type";
+
+
+
+        }
+
+        private void BtnRandom_Click(object sender, EventArgs e)
+        {
+            Random rand1 = new Random();
+            if (Int32.TryParse(TxtMinimum.Text, out minimum))
+            {
+                if (Int32.TryParse(TxtMaximum.Text, out maximum))
+                {
+                    if (maximum > minimum)
+                    {
+                        answer = rand1.Next(minimum, maximum);
+                        LblAnswerRandom.Text = ($"Random Integer: {answer}");
+                    }
+                    else
+                        LblAnswerRandom.Text = "Error: Minimum cannot be greater than Maximum";
+                }
+                else
+                    LblAnswerRandom.Text = "Error: Enter Correct Data Type";
+            }
+            else
+                LblAnswerRandom.Text = "Error: Enter Correct Data Type";
+
+        }
+
+        private void BtnDivisble_Click(object sender, EventArgs e)
+        {
+            if (Int32.TryParse(TxtDivider.Text, out divider))
+            {
+                if (divider != 0 && answer % divider == 0)
+                    LblAnswerDivider.Text = "Your random number is divisble by your divisor";
+                else
+                    LblAnswerDivider.Text = "Your random number is Not divisble by your divisor";
+            }
+            else
+                LblAnswerDivider.Text = "Error: Enter Correct Data Type";
+
         }
     }
 }
