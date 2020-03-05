@@ -225,7 +225,7 @@
             this.Controls.Add(this.LblAge);
             this.Controls.Add(this.TxtAge);
             this.Name = "Part_5";
-            this.Text = "Form1";
+            this.Text = "Part 5 If Statements";
             this.ResumeLayout(false);
             this.PerformLayout();
 

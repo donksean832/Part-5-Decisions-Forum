@@ -29,7 +29,7 @@ namespace Part_5_Decisions_Forum
             if (Int32.TryParse(TxtAge.Text, out age))
             {
                 if (age > 18)
-                    LblAnswer.Text = "Adult";
+                    LblAnswer.Text = "You are an adult";
                 else if (age <= 18)
                 {
                     if (age <= 12)
@@ -92,36 +92,6 @@ namespace Part_5_Decisions_Forum
             }
             else
                 LblHurricaneAnswer.Text = "Error: Enter Integer";
-
-
-            //Random rand1 = new Random();
-            //if (Int32.TryParse(TxtMinimum.Text, out minimum))
-            //{
-            //    if (Int32.TryParse(TxtMaximum.Text, out maximum))
-            //    {
-            //        answer = rand1.Next(minimum, maximum);
-            //        LblAnswerRandom.Text = ($"Random Integer: {answer}");
-            //    }
-            //    else
-            //        LblAnswerRandom.Text = "Error: Enter Correct Data Type";
-            //}
-            //else
-            //    LblAnswerRandom.Text = "Error: Enter Correct Data Type";
-
-
-
-            //if (Int32.TryParse(TxtDivider.Text ,out divider))
-            //{
-            //    if (answer % divider == 0)
-            //        LblAnswerDivider.Text = "Your random number is divisble by your divisor";
-            //    else
-            //        LblAnswerDivider.Text = "Your random number is Not divisble by your divisor";
-            //}
-            //else
-            //    LblAnswer.Text = "Error: Enter Correct Data Type";
-
-
-
         }
 
         private void BtnRandom_Click(object sender, EventArgs e)
@@ -137,7 +107,7 @@ namespace Part_5_Decisions_Forum
                         LblAnswerRandom.Text = ($"Random Integer: {answer}");
                     }
                     else
-                        LblAnswerRandom.Text = "Error: Minimum cannot be greater than Maximum";
+                        LblAnswerRandom.Text = "Error: Minimum cannot be greater than Maximum.";
                 }
                 else
                     LblAnswerRandom.Text = "Error: Enter Correct Data Type";
@@ -152,9 +122,9 @@ namespace Part_5_Decisions_Forum
             if (Int32.TryParse(TxtDivider.Text, out divider))
             {
                 if (divider != 0 && answer % divider == 0)
-                    LblAnswerDivider.Text = "Your random number is divisble by your divisor";
+                    LblAnswerDivider.Text = "Your random number is divisble by your divisor.";
                 else
-                    LblAnswerDivider.Text = "Your random number is Not divisble by your divisor";
+                    LblAnswerDivider.Text = "Your random number is Not divisble by your divisor.";
             }
             else
                 LblAnswerDivider.Text = "Error: Enter Correct Data Type";
